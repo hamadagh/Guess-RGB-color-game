@@ -1,0 +1,62 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  width: 100%;
+  background-color: #1abc9c;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.header #colorToGuess {
+  font-size: 3rem;
+}
+
+#list_container {
+  list-style-type: none;
+  margin: auto;
+  background: blue;
+}
+
+.sub__header {
+  width: 100%;
+  height: 17vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#main_section {
+  height: 1000px;
+}
+
+#main_section .circles_container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 6px solid rgba(255, 255, 255, 0.516);
+  margin: 10px 20px;
+  cursor: pointer;
+}
+
+button {
+  background-color: #1abc9c;
+  padding: 14px;
+  cursor: pointer;
+  border-radius: 10px;
+  color: white;
+  font-size: larger;
+}
