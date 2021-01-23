@@ -14,9 +14,12 @@ function App() {
   const [colorToGuess, setColorToGuess] = useState("rgb(87, 147, 173)");
   const [reaction, setReaction] = useState("Guess !");
   const [resetGame, setResetGame] = useState(false);
+
   useEffect(() => {
     setColorToGuess(randomColors[Math.floor(Math.random() * 5)]);
     setReaction("Guess !");
+
+    // eslint-disable-next-line
   }, [resetGame]);
 
   const randomColor = (index) => {
@@ -99,17 +102,18 @@ function App() {
         </div>
       </div>
       <div className="footer">
-        <a href="https://github.com/hamadagh" target="_blank">
-          <i class="fab fa-github"></i>
+        <a href="https://github.com/hamadagh" target="_blank" rel="noreferrer">
+          <i className="fab fa-github"></i>
         </a>
         <a
           href="https://www.linkedin.com/in/hamada-ghanem-822490182/"
           target="_blank"
+          rel="noreferrer"
         >
-          <i class="fab fa-linkedin"></i>
+          <i className="fab fa-linkedin"></i>
         </a>
-        <a href="https://hamadaghanem.de" target="_blank">
-          <i class="fas fa-user"></i>
+        <a href="https://hamadaghanem.de" target="_blank" rel="noreferrer">
+          <i className="fas fa-user"></i>
         </a>
       </div>
     </div>
