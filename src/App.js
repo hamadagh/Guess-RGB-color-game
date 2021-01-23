@@ -87,6 +87,9 @@ function App() {
           ></div>
         </div>
       </div>
+      <div className="footer">
+        <span>Github Link</span>
+      </div>
     </div>
   );
 }
