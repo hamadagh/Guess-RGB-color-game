@@ -17,7 +17,7 @@ function App() {
     setColorToGuess(randomColors[Math.floor(Math.random() * 5)]);
   }, [randomColors]);
 
-  const randomColor = () => {
+  const randomColor = (index) => {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
     const b = Math.floor(Math.random() * 256);
@@ -35,7 +35,23 @@ function App() {
 
   const checkGuess = (e) => {
     if (e.target.style.backgroundColor === colorToGuess) {
-      setReaction("CORRECT !!!");
+      setReaction("Correct !!");
+      setRandomColors([
+        colorToGuess,
+        colorToGuess,
+        colorToGuess,
+        colorToGuess,
+        colorToGuess,
+        colorToGuess,
+      ]);
+    } else {
+      setReaction("Try Again :(");
+      let index = randomColors.indexOf(e.target.style.backgroundColor);
+      let colors = [...randomColors];
+      let color = randomColors.indexOf(index);
+      color = "rgb(0, 0, 0)";
+      colors[index] = color;
+      setRandomColors(colors);
     }
   };
   return (
