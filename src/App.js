@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import "./App.css";
 
 function App() {
@@ -11,10 +12,11 @@ function App() {
     "rgb(200, 57, 247)",
   ]);
   const [colorToGuess, setColorToGuess] = useState("rgb(87, 147, 173)");
-  const [reaction, setReaction] = useState("GUESS");
+  const [reaction, setReaction] = useState("Guess !");
   const [resetGame, setResetGame] = useState(false);
   useEffect(() => {
     setColorToGuess(randomColors[Math.floor(Math.random() * 5)]);
+    setReaction("Guess !");
   }, [resetGame]);
 
   const randomColor = (index) => {
@@ -56,10 +58,8 @@ function App() {
       </div>
 
       <div className="sub__header">
-        <button onClick={generateRandomColor}>New colors</button>
-        <h1 id="reaction">
-          <b>{reaction}</b>
-        </h1>
+        <button onClick={generateRandomColor}>New Colors</button>
+        <h1 id="reaction">{reaction}</h1>
       </div>
 
       <div id="main_section">
@@ -99,7 +99,18 @@ function App() {
         </div>
       </div>
       <div className="footer">
-        <span>Github Link</span>
+        <a href="https://github.com/hamadagh" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/hamada-ghanem-822490182/"
+          target="_blank"
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://hamadaghanem.de" target="_blank">
+          <i class="fas fa-user"></i>
+        </a>
       </div>
     </div>
   );
