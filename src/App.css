@@ -22,7 +22,8 @@
   bottom: 0;
 }
 .header #colorToGuess {
-  font-size: 3rem;
+  font-size: 45px;
+  margin: 10px;
 }
 
 #list_container {
@@ -68,4 +69,20 @@ button {
   border-radius: 10px;
   color: white;
   font-size: larger;
+}
+
+/* Mobile screens */
+
+@media (max-width: 609px) {
+  .circle {
+    width: 80px;
+    height: 80px;
+  }
+  #main_section .circles_container {
+    margin-bottom: 0px;
+  }
+  .header #colorToGuess {
+    font-size: 25px;
+    margin: 5px;
+  }
 }
