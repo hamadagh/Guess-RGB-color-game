@@ -12,10 +12,10 @@ function App() {
   ]);
   const [colorToGuess, setColorToGuess] = useState("rgb(87, 147, 173)");
   const [reaction, setReaction] = useState("GUESS");
-
+  const [resetGame, setResetGame] = useState(false);
   useEffect(() => {
     setColorToGuess(randomColors[Math.floor(Math.random() * 5)]);
-  }, [randomColors]);
+  }, [resetGame]);
 
   const randomColor = (index) => {
     const r = Math.floor(Math.random() * 256);
@@ -31,27 +31,22 @@ function App() {
       colors.push(randomColor());
     }
     setRandomColors(colors);
+    setResetGame(!resetGame);
   };
 
   const checkGuess = (e) => {
     if (e.target.style.backgroundColor === colorToGuess) {
+      let color = e.target.style.backgroundColor;
       setReaction("Correct !!");
-      setRandomColors([
-        colorToGuess,
-        colorToGuess,
-        colorToGuess,
-        colorToGuess,
-        colorToGuess,
-        colorToGuess,
-      ]);
+      setRandomColors([color, color, color, color, color, color]);
     } else {
       setReaction("Try Again :(");
       let index = randomColors.indexOf(e.target.style.backgroundColor);
-      let colors = [...randomColors];
-      let color = randomColors.indexOf(index);
-      color = "rgb(0, 0, 0)";
-      colors[index] = color;
-      setRandomColors(colors);
+      let circleColors = [...randomColors];
+      let circleColor = randomColors.indexOf(index);
+      circleColor = "rgb(0, 0, 0)";
+      circleColors[index] = circleColor;
+      setRandomColors(circleColors);
     }
   };
   return (
